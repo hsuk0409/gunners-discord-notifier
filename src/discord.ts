@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { NewsItem } from './types.js';
+import { translateToKorean } from './translator.js';
 
 // 아스날 관련 컬러 데시멀 값
 const COLORS = {
@@ -38,15 +39,20 @@ export async function sendDiscordNotification(webhookUrl: string, item: NewsItem
   }
 
   const color = getEmbedColor(item.author);
-  
+
+  const [translatedTitle, translatedExcerpt] = await Promise.all([
+    translateToKorean(item.title),
+    item.excerpt ? translateToKorean(item.excerpt) : Promise.resolve(''),
+  ]);
+
   const embed = {
-    title: item.title,
+    title: translatedTitle,
     url: item.url,
     color: color,
     author: {
       name: item.author || 'Arsenal News',
     },
-    description: item.excerpt || '클릭하여 전체 내용을 확인하세요.',
+    description: translatedExcerpt || '클릭하여 전체 내용을 확인하세요.',
     timestamp: item.timestamp,
     footer: {
       text: `Source: ${item.source.toUpperCase()}${item.sourceUrl ? ' (via Reddit)' : ''}`,
