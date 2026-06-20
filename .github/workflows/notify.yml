@@ -1,0 +1,58 @@
+name: Gunners Discord Notifier
+
+on:
+  schedule:
+    - cron: '*/30 * * * *' # 30분마다 자동 실행
+  workflow_dispatch: # 수동 실행 기능 제공
+
+concurrency:
+  group: notifier
+  cancel-in-progress: true
+
+permissions:
+  contents: write # last_processed_ids.json 변경사항을 push하기 위해 쓰기 권한 허용
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # 변경 사항을 커밋하고 푸시하기 위해 전체 git history를 유지하거나 write 권한 세팅
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9 # package.json과 호환되는 메이저 버전 지정
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run Notifier Script
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          RSS_FEEDS: ${{ secrets.RSS_FEEDS }}
+        run: pnpm start
+
+      - name: Commit and Push state changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # last_processed_ids.json 변경사항이 있는지 확인
+          if git diff --quiet data/last_processed_ids.json; then
+            echo "변경 사항 없음. 커밋을 스킵합니다."
+          else
+            git add data/last_processed_ids.json
+            git commit -m "chore: update processed ids state [skip ci]"
+            git push origin HEAD:${{ github.ref }}
+          fi
