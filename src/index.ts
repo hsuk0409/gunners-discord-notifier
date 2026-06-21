@@ -1,15 +1,9 @@
+import dotenv from 'dotenv';
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
-import dotenv from 'dotenv';
+import { sendDiscordNotification } from './discord.js';
 import { fetchRedditNews } from './scraper/reddit.js';
 import { fetchRssNews } from './scraper/rss.js';
-import { sendDiscordNotification } from './discord.js';
-import { NewsItem } from './types.js';
-
-// ES Module 환경에서 __dirname 설정
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 // .env 로드
 dotenv.config();
