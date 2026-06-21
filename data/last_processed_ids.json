@@ -1,40 +1,154 @@
 [
-  "https://www.football.london/arsenal-fc/transfer-news/rogers-kroupi-sign-wildcard-transfer-34145452",
-  "https://www.football.london/arsenal-fc/transfer-news/arsenal-transfer-news-live-barcola-34127757",
-  "https://www.football.london/arsenal-fc/transfer-news/arsenal-transfer-latest-nicolo-tresoldi-34147006",
-  "https://www.football.london/tottenham-hotspur-fc/transfer-news/sandro-tonali-transfer-arsenal-tottenham-34147465",
-  "https://www.football.london/arsenal-fc/news/15-arsenal-players-who-could-34135207",
-  "https://www.football.london/arsenal-fc/transfer-news/arsenal-transfer-news-bradley-barcola-34145486",
-  "https://www.football.london/arsenal-fc/fixtures-results/dream-arsenal-premier-league-fixture-34146520",
-  "https://www.football.london/arsenal-fc/fixtures-results/premier-league-fixtures-2026-27-34149025",
-  "https://www.football.london/arsenal-fc/news/arsenal-learn-champions-league-fate-34144596",
-  "https://www.football.london/arsenal-fc/fixtures-results/arsenal-key-premier-league-fixtures-34148946",
-  "https://www.football.london/arsenal-fc/fixtures-results/arsenal-premier-league-fixture-dreamland-34149029",
-  "https://www.football.london/arsenal-fc/fixtures-results/arsenal-man-city-liverpool-premier-34148987",
-  "https://www.football.london/arsenal-fc/fixtures-results/premier-league-fixtures-release-live-34145651",
-  "https://www.football.london/arsenal-fc/news/arsenal-transfer-news-morgan-rogers-34150138",
-  "https://www.football.london/arsenal-fc/fixtures-results/arsenal-fixture-nightmare-mikel-arteta-34151087",
-  "https://www.football.london/arsenal-fc/transfer-news/morgan-rogers-signs-julian-alvarez-34149942",
-  "https://www.football.london/arsenal-fc/transfer-news/arsenal-transfer-news-berta-calafiori-34151215",
-  "https://www.football.london/arsenal-fc/transfer-news/arsenal-given-extra-incentive-complete-34152321",
-  "https://www.football.london/arsenal-fc/news/thierry-henrys-nine-word-explanation-34152066",
-  "https://www.football.london/arsenal-fc/news/arsenal-latest-real-madrid-make-34154697",
-  "https://www.football.london/arsenal-fc/fixtures-results/rice-saka-missing-two-new-34153111",
-  "https://www.football.london/arsenal-fc/news/ayyoub-bouaddi-causes-stir-arsenal-34155896",
-  "https://www.football.london/arsenal-fc/fixtures-results/dates-arsenal-202627-premier-league-34156556",
-  "https://www.football.london/arsenal-fc/transfer-news/viktor-gyokeres-world-cup-sweden-34156925",
-  "https://www.football.london/arsenal-fc/transfer-news/arsenal-given-morgan-rogers-transfer-34157178",
-  "https://www.football.london/arsenal-fc/news/arsenal-news-gabriel-injury-brazil-34158207",
-  "https://www.football.london/arsenal-fc/news/bukayo-saka-england-injury-latest-34158969",
-  "https://www.football.london/arsenal-fc/news/arsenal-could-new-no9-next-34148995",
-  "https://www.football.london/arsenal-fc/transfer-news/arsenal-transfer-news-morgan-rogers-34157566",
-  "https://www.football.london/arsenal-fc/news/arsenal-news-william-saliba-injury-34159076",
-  "https://www.football.london/arsenal-fc/transfer-news/7-arsenal-transfer-moves-martin-34157477",
-  "https://www.football.london/arsenal-fc/transfer-news/arsenal-morgan-rogers-transfer-rice-34159154",
-  "https://www.football.london/arsenal-fc/transfer-news/morgan-rogers-christos-tzolis-four-34157961",
-  "https://www.football.london/arsenal-fc/news/declan-rice-mikel-arteta-england-34160170",
-  "https://www.football.london/arsenal-fc/news/arsenal-kylian-mbappe-transfer-bouaddi-34160692",
-  "https://www.football.london/arsenal-fc/news/declan-rice-england-world-cup-34161379",
-  "https://www.reddit.com/user/UnquenchedMammoth356",
-  "https://www.reddit.com/user/SerialGooner49"
+  {
+    "url": "https://www.football.london/arsenal-fc/transfer-news/rogers-kroupi-sign-wildcard-transfer-34145452",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/transfer-news/arsenal-transfer-news-live-barcola-34127757",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/transfer-news/arsenal-transfer-latest-nicolo-tresoldi-34147006",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/tottenham-hotspur-fc/transfer-news/sandro-tonali-transfer-arsenal-tottenham-34147465",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/news/15-arsenal-players-who-could-34135207",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/transfer-news/arsenal-transfer-news-bradley-barcola-34145486",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/fixtures-results/dream-arsenal-premier-league-fixture-34146520",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/fixtures-results/premier-league-fixtures-2026-27-34149025",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/news/arsenal-learn-champions-league-fate-34144596",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/fixtures-results/arsenal-key-premier-league-fixtures-34148946",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/fixtures-results/arsenal-premier-league-fixture-dreamland-34149029",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/fixtures-results/arsenal-man-city-liverpool-premier-34148987",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/fixtures-results/premier-league-fixtures-release-live-34145651",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/news/arsenal-transfer-news-morgan-rogers-34150138",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/fixtures-results/arsenal-fixture-nightmare-mikel-arteta-34151087",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/transfer-news/morgan-rogers-signs-julian-alvarez-34149942",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/transfer-news/arsenal-transfer-news-berta-calafiori-34151215",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/transfer-news/arsenal-given-extra-incentive-complete-34152321",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/news/thierry-henrys-nine-word-explanation-34152066",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/news/arsenal-latest-real-madrid-make-34154697",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/fixtures-results/rice-saka-missing-two-new-34153111",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/news/ayyoub-bouaddi-causes-stir-arsenal-34155896",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/fixtures-results/dates-arsenal-202627-premier-league-34156556",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/transfer-news/viktor-gyokeres-world-cup-sweden-34156925",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/transfer-news/arsenal-given-morgan-rogers-transfer-34157178",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/news/arsenal-news-gabriel-injury-brazil-34158207",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/news/bukayo-saka-england-injury-latest-34158969",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/news/arsenal-could-new-no9-next-34148995",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/transfer-news/arsenal-transfer-news-morgan-rogers-34157566",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/news/arsenal-news-william-saliba-injury-34159076",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/transfer-news/7-arsenal-transfer-moves-martin-34157477",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/transfer-news/arsenal-morgan-rogers-transfer-rice-34159154",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/transfer-news/morgan-rogers-christos-tzolis-four-34157961",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/news/declan-rice-mikel-arteta-england-34160170",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/news/arsenal-kylian-mbappe-transfer-bouaddi-34160692",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.football.london/arsenal-fc/news/declan-rice-england-world-cup-34161379",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.reddit.com/user/UnquenchedMammoth356",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  },
+  {
+    "url": "https://www.reddit.com/user/SerialGooner49",
+    "addedAt": "2026-06-21T23:35:22.335Z"
+  }
 ]
