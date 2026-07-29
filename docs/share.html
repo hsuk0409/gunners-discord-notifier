@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>카카오톡 공유</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 24px;
+    box-sizing: border-box;
+    text-align: center;
+    background: #f5f5f7;
+  }
+  h1 { font-size: 18px; margin-bottom: 8px; line-height: 1.4; }
+  a.fallback { color: #ef0107; font-size: 14px; word-break: break-all; }
+  button {
+    margin-top: 24px;
+    padding: 16px 32px;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+    background: #ffe812;
+    color: #191919;
+    font-weight: 600;
+  }
+  #status {
+    margin-top: 16px;
+    font-size: 13px;
+    color: #900;
+  }
+</style>
+</head>
+<body>
+  <h1 id="title"></h1>
+  <button id="shareBtn">카카오톡으로 공유</button>
+  <div id="status"></div>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const shareTitle = params.get("title");
+    const shareUrl = params.get("url");
+    const statusEl = document.getElementById("status");
+
+    if (!shareTitle || !shareUrl) {
+      document.getElementById("title").textContent = "공유할 기사 정보가 없습니다.";
+      document.getElementById("shareBtn").style.display = "none";
+    } else {
+      document.getElementById("title").textContent = shareTitle;
+
+      if (typeof navigator.share !== "function") {
+        document.getElementById("shareBtn").style.display = "none";
+        const link = document.createElement("a");
+        link.className = "fallback";
+        link.href = shareUrl;
+        link.textContent = "공유하기가 지원되지 않아요. 이 링크를 눌러 직접 여세요: " + shareUrl;
+        statusEl.appendChild(link);
+      } else {
+        document.getElementById("shareBtn").addEventListener("click", async () => {
+          statusEl.textContent = "";
+          try {
+            await navigator.share({ title: shareTitle, url: shareUrl });
+          } catch (err) {
+            if (err.name !== "AbortError") {
+              statusEl.textContent = "공유에 실패했어요: " + err.message;
+            }
+          }
+        });
+      }
+    }
+  </script>
+</body>
+</html>

@@ -9,6 +9,17 @@ const COLORS = {
   GRAY: 8359053,         // #7F8C8D
 };
 
+// GitHub Pages로 배포된 카카오톡 공유 랜딩 페이지 (Web Share API, 로그인 불필요)
+const KAKAO_SHARE_PAGE_URL = 'https://hsuk0409.github.io/gunners-discord-notifier/share.html';
+
+/**
+ * 기사 제목/링크를 쿼리스트링으로 담아 카카오톡 공유 랜딩 페이지 URL을 생성합니다.
+ */
+export function buildKakaoShareUrl(title: string, url: string): string {
+  const query = new URLSearchParams({ title, url });
+  return `${KAKAO_SHARE_PAGE_URL}?${query.toString()}`;
+}
+
 /**
  * 기자의 공신력에 따라 Embed 카드의 색상을 결정합니다.
  */
@@ -59,9 +70,24 @@ export async function sendDiscordNotification(webhookUrl: string, item: NewsItem
     },
   };
 
+  const components = [
+    {
+      type: 1, // Action Row
+      components: [
+        {
+          type: 2, // Button
+          style: 5, // Link (interaction endpoint 없이도 동작)
+          label: '카카오톡 공유',
+          url: buildKakaoShareUrl(translatedTitle, item.url),
+        },
+      ],
+    },
+  ];
+
   try {
     await axios.post(webhookUrl, {
       embeds: [embed],
+      components,
     });
   } catch (error: any) {
     console.error(`Discord 알림 전송 실패: ${item.title}`);
