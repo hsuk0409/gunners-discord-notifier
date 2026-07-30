@@ -85,7 +85,9 @@ export async function sendDiscordNotification(webhookUrl: string, item: NewsItem
   ];
 
   try {
-    await axios.post(webhookUrl, {
+    // 애플리케이션이 소유하지 않은 일반 Incoming Webhook에서 components(버튼)를 렌더링하려면
+    // with_components=true가 없으면 Discord가 에러 없이 components를 조용히 무시함
+    await axios.post(`${webhookUrl}?with_components=true`, {
       embeds: [embed],
       components,
     });
