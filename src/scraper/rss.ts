@@ -9,16 +9,23 @@ interface FeedConfig {
 
 const parser = new Parser();
 
+// 항상 포함되는 기본 피드 (football.london 아스날 뉴스 RSS)
+const DEFAULT_FEED: FeedConfig = {
+  url: 'https://www.football.london/arsenal-fc/?service=rss',
+  defaultAuthor: 'Football.London (Arsenal)',
+};
+
 /**
- * 환경변수 또는 기본값에서 RSS 피드 목록 설정을 읽어옵니다.
+ * 기본 피드에 환경변수로 등록된 추가 RSS 피드 목록을 합쳐 반환합니다.
  * 환경변수 포맷 예: RSS_FEEDS="https://www.arsenal.com/news/rss|Arsenal Official,https://nitter.privacydev.net/David_Ornstein/rss|David Ornstein"
  */
-function getFeedConfigs(): FeedConfig[] {
+export function getFeedConfigs(): FeedConfig[] {
   const envFeeds = process.env.RSS_FEEDS;
-  
+  const configs: FeedConfig[] = [DEFAULT_FEED];
+
   if (envFeeds) {
     try {
-      return envFeeds.split(',').flatMap(item => {
+      const additionalFeeds = envFeeds.split(',').flatMap(item => {
         const [url, author] = item.split('|');
         const trimmedUrl = url.trim();
         if (!trimmedUrl.startsWith('https://')) {
@@ -30,18 +37,18 @@ function getFeedConfigs(): FeedConfig[] {
           defaultAuthor: (author || 'RSS Source').trim(),
         }];
       });
+
+      for (const feed of additionalFeeds) {
+        if (!configs.some(c => c.url === feed.url)) {
+          configs.push(feed);
+        }
+      }
     } catch (e) {
-      console.error('RSS_FEEDS 환경변수 파싱 에러, 기본 설정을 사용합니다.', e);
+      console.error('RSS_FEEDS 환경변수 파싱 에러, 기본 피드만 사용합니다.', e);
     }
   }
 
-  // 기본 백업 설정 (football.london 아스날 뉴스 RSS 피드)
-  return [
-    {
-      url: 'https://www.football.london/arsenal-fc/?service=rss',
-      defaultAuthor: 'Football.London (Arsenal)',
-    }
-  ];
+  return configs;
 }
 
 /**
