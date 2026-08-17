@@ -1,20 +1,7 @@
 import axios from 'axios';
 import Parser from 'rss-parser';
 import { NewsItem } from '../types.js';
-
-// 공신력 있는 핵심 키워드 목록 (소문자 기준)
-const TRUSTED_KEYWORDS = [
-  'ornstein',
-  'romano',
-  'charles watts',
-  'gunnerblog',
-  'amy lawrence',
-  'mokbel',
-  'di marzio',
-  'athletic',
-  'telegraph',
-  'times'
-];
+import { TRUSTED_KEYWORDS, AUTHOR_DISPLAY_NAMES } from '../trustedSources.js';
 
 const parser = new Parser();
 
@@ -34,16 +21,7 @@ export function parseAuthorFromTitle(title: string): string {
   const lowerTitle = title.toLowerCase();
   for (const keyword of TRUSTED_KEYWORDS) {
     if (lowerTitle.includes(keyword)) {
-      if (keyword === 'ornstein') return 'David Ornstein';
-      if (keyword === 'romano') return 'Fabrizio Romano';
-      if (keyword === 'charles watts') return 'Charles Watts';
-      if (keyword === 'gunnerblog') return 'James McNicholas (gunnerblog)';
-      if (keyword === 'amy lawrence') return 'Amy Lawrence';
-      if (keyword === 'mokbel') return 'Sami Mokbel';
-      if (keyword === 'di marzio') return 'Gianluca Di Marzio';
-      if (keyword === 'athletic') return 'The Athletic';
-      if (keyword === 'telegraph') return 'The Telegraph';
-      if (keyword === 'times') return 'The Times';
+      return AUTHOR_DISPLAY_NAMES[keyword];
     }
   }
 
@@ -77,14 +55,22 @@ function extractOriginalUrl(content: string, redditFallbackUrl: string): string 
   const links = hrefMatch.map(h => h.replace('href="', '').replace('"', ''));
 
   // 1. 공신력 기자/매체 외부 링크 후보가 있는지 탐색
-  const externalLink = links.find(l => 
-    l.includes('x.com') || 
-    l.includes('twitter.com') || 
-    l.includes('theathletic.com') || 
+  const externalLink = links.find(l =>
+    l.includes('x.com') ||
+    l.includes('twitter.com') ||
+    l.includes('theathletic.com') ||
     l.includes('t.co') ||
     l.includes('football.london') ||
     l.includes('telegraph.co.uk') ||
-    l.includes('thetimes.com')
+    l.includes('thetimes.com') ||
+    l.includes('bbc.co.uk') ||
+    l.includes('bbc.com') ||
+    l.includes('skysports.com') ||
+    l.includes('standard.co.uk') ||
+    l.includes('mirror.co.uk') ||
+    l.includes('espn.com') ||
+    l.includes('theguardian.com') ||
+    l.includes('givemesport.com')
   );
 
   if (externalLink) {

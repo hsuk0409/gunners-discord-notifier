@@ -17,6 +17,21 @@ describe('Reddit Scraper Parser Helpers', () => {
       const title = '[Daily Mail] Arsenal interested in backup goalkeeper';
       expect(parseAuthorFromTitle(title)).toBe('r/Gunners');
     });
+
+    it('새로 추가된 2티어 기자(Wheatley)도 맵핑된 이름을 반환해야 합니다', () => {
+      const title = 'Wheatley: Arsenal move to conclude deal in coming days';
+      expect(parseAuthorFromTitle(title)).toBe('Chris Wheatley');
+    });
+
+    it('BBC Sport 키워드도 맵핑된 이름을 반환해야 합니다', () => {
+      const title = 'Arsenal target agrees to move, BBC Sport reports';
+      expect(parseAuthorFromTitle(title)).toBe('BBC Sport');
+    });
+
+    it('"volley"처럼 James Olley 키워드와 겹치는 일반 단어는 오탐되지 않아야 합니다', () => {
+      const title = "Odegaard's stunning volley wins it for Arsenal";
+      expect(parseAuthorFromTitle(title)).toBe('r/Gunners');
+    });
   });
 
   describe('isTrustedPost', () => {
@@ -36,6 +51,12 @@ describe('Reddit Scraper Parser Helpers', () => {
       const title = 'What do you think about our new home kit?';
       const flair = 'Discussion';
       expect(isTrustedPost(title, flair)).toBe(false);
+    });
+
+    it('Flair는 없지만 제목에 새로 추가된 기자(Kinsella) 키워드가 포함되면 참(true)을 반환해야 합니다', () => {
+      const title = 'Kinsella: Arsenal set to announce new signing this week';
+      const flair = '';
+      expect(isTrustedPost(title, flair)).toBe(true);
     });
   });
 });

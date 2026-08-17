@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { NewsItem } from './types.js';
 import { translateToKorean } from './translator.js';
+import { TIER1_KEYWORDS, TIER2_KEYWORDS } from './trustedSources.js';
 
 // 아스날 관련 컬러 데시멀 값
 const COLORS = {
@@ -25,19 +26,15 @@ export function buildKakaoShareUrl(title: string, url: string): string {
  */
 function getEmbedColor(author: string): number {
   const normalizedAuthor = author.toLowerCase();
-  
-  // 1티어 공신력 기자
-  const tier1 = ['ornstein', 'romano', 'charles watts', 'gunnerblog', 'amy lawrence'];
-  if (tier1.some(name => normalizedAuthor.includes(name))) {
+
+  if (TIER1_KEYWORDS.some(name => normalizedAuthor.includes(name))) {
     return COLORS.ARSENAL_RED;
   }
-  
-  // 2티어 공신력 기자/매체
-  const tier2 = ['di marzio', 'mokbel', 'wheatley', 'athletic', 'telegraph', 'times'];
-  if (tier2.some(name => normalizedAuthor.includes(name))) {
+
+  if (TIER2_KEYWORDS.some(name => normalizedAuthor.includes(name))) {
     return COLORS.GOLD;
   }
-  
+
   return COLORS.GRAY;
 }
 
