@@ -1,9 +1,5 @@
 [
   {
-    "url": "https://www.football.london/arsenal-fc/news/arsenals-15-world-cup-players-34319744",
-    "addedAt": "2026-07-20T12:23:30.070Z"
-  },
-  {
     "url": "https://www.football.london/arsenal-fc/news/arsenal-players-return-pre-season-34320693",
     "addedAt": "2026-07-20T13:14:30.908Z"
   },
@@ -1766,5 +1762,9 @@
   {
     "url": "https://www.bbc.co.uk/sport/football/articles/c98vz9jvg0vo?at_medium=RSS&at_campaign=rss",
     "addedAt": "2026-08-19T11:29:15.384Z"
+  },
+  {
+    "url": "https://www.bbc.co.uk/sport/football/articles/c1416keng1po?at_medium=RSS&at_campaign=rss",
+    "addedAt": "2026-08-19T12:54:50.306Z"
   }
 ]
